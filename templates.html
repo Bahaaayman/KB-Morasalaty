@@ -12,7 +12,7 @@
             <div class="header-content">
                 <a href="index.html" class="logo">مراسلاتي</a>
                 
-                <nav>
+                <nav id="main-nav">
                     <ul class="nav-menu">
                         <li><a href="index.html">الرئيسية</a></li>
                         <li><a href="templates.html">النماذج</a></li>
@@ -23,6 +23,11 @@
                         <li><a href="#faq">اسأل سؤالك</a></li>
                     </ul>
                 </nav>
+                <button class="hamburger" id="hamburger-menu" aria-label="فتح القائمة" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 
                 <button class="lang-toggle" onclick="toggleLanguage()">English</button>
             </div>
@@ -67,24 +72,6 @@
                     </div>
                 </div>
             </section>
-
-          <!-- <section class="content-section" id="template-creation-steps">
-                <h2 class="section-title">خطوات إنشاء نموذج في نظام مراسلاتي</h2>
-                <div class="steps-list">
-                    <ol>
-                        <li>قم بتسجيل الدخول إلى حسابك في منصة مراسلاتي</li>
-                        <li>انتقل إلى قسم "النماذج" من القائمة الجانبية</li>
-                        <li>اضغط على زر "إنشاء نموذج جديد"</li>
-                        <li>اختر نوع النموذج (معلوماتي، تسويقي، أو خدمي)</li>
-                        <li>أدخل اسم النموذج باللغة الإنجليزية (بدون مسافات)</li>
-                        <li>اختر اللغة المناسبة للنموذج</li>
-                        <li>اكتب محتوى النموذج مع استخدام المتغيرات الديناميكية عند الحاجة</li>
-                        <li>أضف أزرار التفاعل إذا كانت مطلوبة</li>
-                        <li>راجع النموذج وتأكد من صحة المحتوى</li>
-                        <li>اضغط على "إرسال للمراجعة" لإرسال النموذج لموافقة Meta</li>
-                    </ol>
-                </div>
-            </section> -->
 
             <div class="important-note" id="meta-policy">
                 <h4>ملاحظة مهمة حول سياسة Meta</h4>
@@ -227,7 +214,7 @@
                 <div class="steps-list">
                     <div class="requirement-section">
                         <h3 class="requirement-title">1. افتح حساب العميل</h3>
-                        <p class="requirement-question">اذهب إلى: https://whatsapp.morasalaty.net/WABA</p>
+                        <p class="requirement-question">اذهب إلى: <a href="https://whatsapp.morasalaty.net/WABA">https://whatsapp.morasalaty.net/WABA</a></p>
                         <div class="example-box">
                           <img src="./Image/account.png" alt="">
                         </div>
@@ -235,7 +222,7 @@
 
                     <div class="requirement-section">
                         <h3 class="requirement-title">2. ابحث عن العميل في 360Dialog</h3>
-                        <p class="requirement-question">افتح: https://hub.360dialog.com/dashboard/partner/pipes</p>
+                        <p class="requirement-question">افتح: <a href="https://hub.360dialog.com/dashboard/partner/pipes">https://hub.360dialog.com/dashboard/partner/pipes</a></p>
                         <p class="content-text">الصق رقم العميل؛ تأكد أنك داخل تبويب "WhatsApp Accounts – WABA"</p>
                         <div class="example-box">
                             <img src="./Image/360dialog.png" alt="">
@@ -247,7 +234,7 @@
                         <p class="content-text">اضغط على الاسم عند ظهوره؛ سيتم الانتقال إلى ملفه الشخصي</p>
                         <p class="content-text">من أعلى، اختر تبويب "Templates"</p>
                         <div class="example-box">
-                            📸 Add image here
+                            <img src="./Image/360dialooog.png" alt="">
                         </div>
                     </div>
 
@@ -258,16 +245,18 @@
                             <li>إن كان لديه نماذج سابقة: انقر "Add Template"</li>
                         </ul>
                         <div class="example-box">
-                            📸 Add image here
+                            <img src="./Image/Add templates.png" alt="">
                         </div>
                     </div>
 
                     <div class="requirement-section">
                         <h3 class="requirement-title">5. املأ بيانات النموذج</h3>
-                        <p class="content-text"><strong>اسم النموذج:</strong> حرف صغير بالكامل (e.g. u_1008_15_7)</p>
-                        <p class="content-text"><strong>Category:</strong> اختر (Marketing / Utility / Authentication)</p>
+                        <p class="content-text"><strong>اسم النموذج:</strong> اسم مختلف وفيه الكود الخاص بك(e.g. u_1008_15_7)</p>
+                        <p class="content-text"><strong>Category:</strong> اختر (Marketing / Utility / Authentication) <span style="color: red; font-size: 20px; font-weight: bold;">اختر دائما Utility</span></p>
+                        <p class="content-text"><strong>Template type:</strong> اختر (Media & Interactive)</p>
+                        <p class="content-text"><strong>Language:</strong> اختر (Arabic / English)</p>
                         <div class="example-box">
-                            📸 Add image here
+                            <img src="./Image/data.png" alt="">
                         </div>
                     </div>
 
@@ -281,7 +270,7 @@
                             <li>Buttons ✅ <br> اختياري</li>>
                         </ul>
                         <div class="example-box">
-                            
+                            <img src="./Image/Header.png" alt="">
                         </div>
                     </div>
 
@@ -289,7 +278,7 @@
                         <h3 class="requirement-title">7. أضف أو عدّل الهيدر</h3>
                         <p class="content-text">اختر نوع الهيدر (Image / Video / Document) حسب اختيار العميل</p>
                         <div class="example-box">
-                            📸 Add image here
+                            <img src="./Image/header img.png" alt="">           
                         </div>
                     </div>
 

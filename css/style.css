@@ -1093,3 +1093,53 @@ img {
   height: auto;
   display: block;
 }
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 200;
+}
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 4px 0;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: var(--white);
+    flex-direction: column;
+    gap: 0;
+    width: 200px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    padding: 1rem 0;
+    display: none;
+    z-index: 150;
+    transition: all 0.3s;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+  .header-content {
+    position: relative;
+  }
+}
