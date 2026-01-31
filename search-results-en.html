@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Morasalaty</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="ltr">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index-en.html" class="logo">Morasalaty</a>
+
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index-en.html">Home</a></li>
+                        <li><a href="templates-en.html">Templates</a></li>
+                        <li><a href="#campaigns">Campaigns</a></li>
+                        <li><a href="#automation">Automation</a></li>
+                        <li><a href="#integration">Integration</a></li>
+                        <li><a href="#sop">Employee Guide</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </nav>
+
+                <button class="lang-toggle" onclick="toggleLanguage()">العربية</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="index-en.html" class="breadcrumb-link">Home</a>
+                <span class="breadcrumb-separator">></span>
+                <span class="breadcrumb-current">Search Results</span>
+            </nav>
+
+            <!-- Search Bar -->
+            <div class="search-container search-results-bar">
+                <div class="search-box">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search knowledge base..." autocomplete="off">
+                    <button type="button" class="search-button" onclick="performSearch()" title="Search" aria-label="Search">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Results -->
+            <div class="search-results-section">
+                <div class="search-info">
+                    <h1 class="search-title">Search Results for: "<span id="searchQuery"></span>"</h1>
+                    <p class="search-count">Found <span id="resultsCount">0</span> results</p>
+                </div>
+
+                <div id="searchResults" class="search-results-list">
+                    <!-- Search results will be populated here by JavaScript -->
+                </div>
+
+                <div id="noResults" class="no-results" style="display: none;">
+                    <div class="no-results-icon">🔍</div>
+                    <h2 class="no-results-title">No results found</h2>
+                    <p class="no-results-text">Try using different words or check spelling</p>
+                    <div class="search-suggestions-help">
+                        <h3>Search Suggestions:</h3>
+                        <ul>
+                            <li>Use more general words</li>
+                            <li>Check spelling</li>
+                            <li>Try different synonyms</li>
+                            <li>Use fewer words in search</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/search-data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

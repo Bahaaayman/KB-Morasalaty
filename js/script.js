@@ -1,64 +1,27 @@
 // Language toggle functionality
 function toggleLanguage() {
-    const body = document.body;
-    const html = document.documentElement;
-    const langButton = document.querySelector('.lang-toggle');
+    const path = window.location.pathname;
+    let filename = path.substring(path.lastIndexOf('/') + 1);
     
-    // Check current language direction
-    const isRTL = html.getAttribute('dir') === 'rtl';
-    
-    if (isRTL) {
-        // Switch to English (LTR)
-        html.setAttribute('dir', 'ltr');
-        html.setAttribute('lang', 'en');
-        body.classList.add('ltr');
-        langButton.textContent = 'العربية';
-        
-        // Update search placeholder
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-            searchInput.placeholder = 'Search in knowledge base...';
-        }
-        
-        // Show alert for now (as requested)
-        alert('Language switching to English - Full translation will be implemented in future updates');
-        
-        // You can add actual content translation here in the future
-        // translateToEnglish();
-        
-    } else {
-        // Switch to Arabic (RTL)
-        html.setAttribute('dir', 'rtl');
-        html.setAttribute('lang', 'ar');
-        body.classList.remove('ltr');
-        langButton.textContent = 'English';
-        
-        // Update search placeholder
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-            searchInput.placeholder = 'ابحث في قاعدة المعرفة...';
-        }
-        
-        // Show alert for now (as requested)
-        alert('تم التبديل إلى اللغة العربية - سيتم تطبيق الترجمة الكاملة في التحديثات القادمة');
-        
-        // You can add actual content translation here in the future
-        // translateToArabic();
+    // Handle root path
+    if (!filename) {
+        filename = 'index.html';
     }
-}
 
-// Function to translate content to English (placeholder for future implementation)
-function translateToEnglish() {
-    // This function will contain the English translations
-    // For now, it's a placeholder
-    console.log('English translation will be implemented here');
-}
-
-// Function to translate content to Arabic (placeholder for future implementation)
-function translateToArabic() {
-    // This function will contain the Arabic translations (default)
-    // For now, it's a placeholder
-    console.log('Arabic translation (default) will be implemented here');
+    if (filename.includes('-en.html')) {
+        // Switch to Arabic
+        const newFilename = filename.replace('-en.html', '.html');
+        window.location.href = newFilename;
+    } else {
+        // Switch to English
+        const newFilename = filename.replace('.html', '-en.html');
+        // Handle root index case if filename is empty or just '/'
+        if (filename === 'index.html') {
+            window.location.href = 'index-en.html';
+        } else {
+            window.location.href = newFilename;
+        }
+    }
 }
 
 // Search functionality
@@ -70,7 +33,8 @@ function performSearch() {
     const query = searchInput.value.trim();
     
     if (query.length < 2) {
-        alert('يرجى إدخال كلمتين على الأقل للبحث');
+        const isEnglish = document.documentElement.lang === 'en';
+        alert(isEnglish ? 'Please enter at least 2 words to search' : 'يرجى إدخال كلمتين على الأقل للبحث');
         return;
     }
     
@@ -78,7 +42,12 @@ function performSearch() {
     sessionStorage.setItem('searchQuery', query);
     
     // Navigate to search results page
-    window.location.href = 'search-results.html';
+    const path = window.location.pathname;
+    if (path.includes('-en.html') || document.documentElement.lang === 'en') {
+        window.location.href = 'search-results-en.html';
+    } else {
+        window.location.href = 'search-results.html';
+    }
 }
 
 function showSearchSuggestions(query) {
@@ -128,8 +97,10 @@ function hideSuggestions() {
 // Search results page functionality
 function displaySearchResults() {
     const query = sessionStorage.getItem('searchQuery');
+    const isEnglish = document.documentElement.lang === 'en';
+
     if (!query) {
-        window.location.href = 'index.html';
+        window.location.href = isEnglish ? 'index-en.html' : 'index.html';
         return;
     }
     
@@ -160,7 +131,16 @@ function displaySearchResults() {
         const noResultsContainer = document.getElementById('noResults');
         
         if (results.length > 0) {
-            searchResultsContainer.innerHTML = results.map(result => `
+            const btnText = isEnglish ? 'Go to section' : 'الانتقال إلى القسم';
+            const linkText = isEnglish ? 'View page' : 'عرض الصفحة';
+
+            searchResultsContainer.innerHTML = results.map(result => {
+                let pageLink = result.page;
+                if (isEnglish) {
+                    pageLink = pageLink.replace('.html', '-en.html');
+                }
+
+                return `
                 <div class="search-result-item">
                     <div class="result-header">
                         <div>
@@ -171,15 +151,15 @@ function displaySearchResults() {
                     <p class="result-snippet">${result.snippet}</p>
                     <div class="result-actions">
                         <button class="go-to-section-btn" onclick="goToSection('${result.page}', '${result.section}')">
-                            الانتقال إلى القسم
+                            ${btnText}
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                 <path d="M7 17L17 7M17 7H7M17 7V17"/>
                             </svg>
                         </button>
-                        <a href="${result.page}" class="result-page-link">عرض الصفحة</a>
+                        <a href="${pageLink}" class="result-page-link">${linkText}</a>
                     </div>
                 </div>
-            `).join('');
+            `}).join('');
             
             searchResultsContainer.style.display = 'block';
             noResultsContainer.style.display = 'none';
@@ -191,17 +171,24 @@ function displaySearchResults() {
 }
 
 function goToSection(page, sectionId) {
+    const isEnglish = document.documentElement.lang === 'en';
+    let targetPage = page;
+
+    if (isEnglish && !targetPage.includes('-en.html')) {
+        targetPage = targetPage.replace('.html', '-en.html');
+    }
+
     // Navigate to the page with section anchor
-    window.location.href = `${page}#${sectionId}`;
+    window.location.href = `${targetPage}#${sectionId}`;
 }
 
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
-    // Ensure the page starts with Arabic (RTL) as default
+    // Ensure the page starts with Arabic (RTL) as default ONLY if lang is not set to en
     const html = document.documentElement;
     const body = document.body;
     
-    if (!html.getAttribute('dir')) {
+    if (!html.getAttribute('lang') && !html.getAttribute('dir')) {
         html.setAttribute('dir', 'rtl');
         html.setAttribute('lang', 'ar');
         body.classList.remove('ltr');
@@ -235,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Check if we're on search results page
-    if (window.location.pathname.includes('search-results.html')) {
+    if (window.location.pathname.includes('search-results')) {
         displaySearchResults();
     }
     

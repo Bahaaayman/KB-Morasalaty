@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morasalaty - Knowledge Base</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="ltr">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index-en.html" class="logo">Morasalaty</a>
+
+                <nav id="main-nav">
+                    <ul class="nav-menu">
+                        <li><a href="index-en.html">Home</a></li>
+                        <li><a href="templates-en.html">Templates</a></li>
+                        <li><a href="#campaigns">Campaigns</a></li>
+                        <li><a href="#automation">Automation</a></li>
+                        <li><a href="#integration">Integration</a></li>
+                        <li><a href="#sop">Employee Guide</a></li>
+                        <li><a href="#faq">Ask a Question</a></li>
+                    </ul>
+                </nav>
+                <button class="hamburger" id="hamburger-menu" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <button class="lang-toggle" onclick="toggleLanguage()">العربية</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="welcome-section" id="welcome-section">
+                <h1 class="welcome-title">Welcome to Morasalaty Knowledge Base</h1>
+                <p class="welcome-subtitle">
+                    Your comprehensive guide to system services and work procedures. Discover how to use Morasalaty platform efficiently.
+                </p>
+
+                <!-- Search Section -->
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" class="search-input" placeholder="Search knowledge base..." autocomplete="off">
+                        <button type="button" class="search-button" onclick="performSearch()" title="Search" aria-label="Search">
+                            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="search-suggestions" id="searchSuggestions"></div>
+                </div>
+            </section>
+
+            <section class="services-grid">
+                <a href="templates-en.html" class="service-card" id="templates-service">
+                    <div class="service-icon">🔖</div>
+                    <h3 class="service-title">Templates</h3>
+                    <p class="service-description">
+                        Learn about different template types and how to create and use them in your marketing and utility campaigns.
+                    </p>
+                </a>
+
+                <a href="#campaigns" class="service-card" id="campaigns-service">
+                    <div class="service-icon">📢</div>
+                    <h3 class="service-title">Marketing Campaigns</h3>
+                    <p class="service-description">
+                        Comprehensive guide to creating and managing effective marketing campaigns via Morasalaty platform.
+                    </p>
+                </a>
+
+                <a href="#automation" class="service-card" id="automation-service">
+                    <div class="service-icon">🤖</div>
+                    <h3 class="service-title">Auto Reply Tree</h3>
+                    <p class="service-description">
+                        Learn how to set up auto-replies and automate processes to improve customer service efficiency.
+                    </p>
+                </a>
+
+                <a href="#integration" class="service-card" id="integration-service">
+                    <div class="service-icon">⚙️</div>
+                    <h3 class="service-title">API Integration</h3>
+                    <p class="service-description">
+                        Discover how to connect Morasalaty with other systems and applications to maximize benefits.
+                    </p>
+                </a>
+
+                <a href="#sop" class="service-card" id="sop-service">
+                    <div class="service-icon">📋</div>
+                    <h3 class="service-title">Employee Guide</h3>
+                    <p class="service-description">
+                        Standard Operating Procedures and guidelines for using the system correctly.
+                    </p>
+                </a>
+
+                <a href="#faq" class="service-card" id="faq-service">
+                    <div class="service-icon">❓</div>
+                    <h3 class="service-title">Ask a Question</h3>
+                    <p class="service-description">
+                        Answers to questions about using Morasalaty platform and its services.
+                    </p>
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

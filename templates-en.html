@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates - Morasalaty</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="ltr">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index-en.html" class="logo">Morasalaty</a>
+
+                <nav id="main-nav">
+                    <ul class="nav-menu">
+                        <li><a href="index-en.html">Home</a></li>
+                        <li><a href="templates-en.html">Templates</a></li>
+                        <li><a href="#campaigns">Campaigns</a></li>
+                        <li><a href="#automation">Automation</a></li>
+                        <li><a href="#integration">Integration</a></li>
+                        <li><a href="#sop">Employee Guide</a></li>
+                        <li><a href="#faq">Ask a Question</a></li>
+                    </ul>
+                </nav>
+                <button class="hamburger" id="hamburger-menu" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <button class="lang-toggle" onclick="toggleLanguage()">العربية</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title">WhatsApp Templates</h1>
+            <p class="page-subtitle">Your comprehensive guide to understanding and creating WhatsApp templates efficiently</p>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <section class="content-section" id="templates-intro">
+                <h2 class="section-title">What are WhatsApp Templates?</h2>
+                <p class="content-text">
+                    WhatsApp templates are pre-approved messages by Meta (WhatsApp).
+                    These templates are used to send messages to customers outside the 24-hour window, or to send automated messages
+                    and important notifications. Templates help businesses communicate with their customers in an organized and professional manner.
+                </p>
+            </section>
+
+            <section class="content-section" id="template-types">
+                <h2 class="section-title">Template Types</h2>
+                <div class="template-types">
+
+                    <div class="template-type">
+                        <h4>Marketing</h4>
+                        <p>
+                            Used to promote products and services, send special offers,
+                            and announce events.
+                        </p>
+                    </div>
+                    <div class="template-type">
+                        <h4>Utility</h4>
+                        <p>
+                            Used to provide useful information to customers such as account updates,
+                            security settings, and system notifications.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="important-note" id="meta-policy">
+                <h4>Important Note on Meta Policy</h4>
+                <p>
+                    <strong>Marketing Templates:</strong> Subject to strict review by Meta and approval process may take
+                    24 to 48 hours. Marketing content must be useful and not annoying to users.
+                    Avoid using words like "free", "limited offer", or any content that might be considered spam.
+                </p>
+                <p>
+                    <strong>Information and Utility Templates:</strong> Usually approved faster
+                    as they provide important information to customers.
+                </p>
+            </div>
+
+            <section class="content-section" id="template-examples">
+                <h2 class="section-title">Template Content Examples</h2>
+
+                <h3 class="section-subtitle">Example of Informational Template - Order Confirmation:</h3>
+                <div class="example-box">
+                    Hello <span class="variable">{{1}}</span>,<br><br>
+                    Your order number <span class="variable">{{2}}</span> has been confirmed successfully!<br><br>
+                    Order Details:<br>
+                    - Product: <span class="variable">{{3}}</span><br>
+                    - Quantity: <span class="variable">{{4}}</span><br>
+                    - Total Amount: <span class="variable">{{5}}</span> SAR<br><br>
+                    We will contact you shortly to confirm delivery.<br><br>
+                    Thank you for trusting us! 🙏
+                </div>
+
+                <h3 class="section-subtitle">Example of Marketing Template - Special Offer:</h3>
+                <div class="example-box">
+                    Hello <span class="variable">{{1}}</span>,<br><br>
+                    We would like to inform you of our new offer on <span class="variable">{{2}}</span><br><br>
+                    Get a <span class="variable">{{3}}</span>% discount when purchasing next week.<br><br>
+                    Offer valid until <span class="variable">{{4}}</span><br><br>
+                    Don't miss this opportunity! 🎉
+                </div>
+
+                <h3 class="section-subtitle">Example of Utility Template - Appointment Reminder:</h3>
+                <div class="example-box">
+                    Dear <span class="variable">{{1}}</span>,<br><br>
+                    We remind you of your appointment booked with us:<br><br>
+                    📅 Date: <span class="variable">{{2}}</span><br>
+                    🕐 Time: <span class="variable">{{3}}</span><br>
+                    📍 Location: <span class="variable">{{4}}</span><br><br>
+                    Please arrive 15 minutes before the appointment.<br><br>
+                    To cancel or reschedule, please contact us.
+                </div>
+            </section>
+
+            <section class="content-section" id="template-tips">
+                <h2 class="section-title">Important Tips for Creating Templates</h2>
+                <div class="steps-list">
+                    <ul>
+                        <li>Use clear and polite language</li>
+                        <li>Avoid spelling and grammatical errors</li>
+                        <li>Do not exceed 1024 characters per template</li>
+                        <li>Use dynamic variables to customize messages</li>
+                        <li>Ensure content provides real value to the customer</li>
+                        <li>Test the template before sending it for review</li>
+                        <li>Keep a backup of important templates</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section" id="client-requirements">
+                <h2 class="section-title">✅ Requirements from Client before working on the Template</h2>
+
+                <div class="requirements-form">
+                    <div class="requirement-section">
+                        <h3 class="requirement-title">1. Header Content:</h3>
+                        <p class="requirement-question">Is the required header:</p>
+                        <ul class="requirement-list">
+                            <li>Image (Extension: JPG or JPEG)</li>
+                            <li>Video (Extension: MP4 – Max size: 20MB)</li>
+                            <li>PDF</li>
+                        </ul>
+                        <p class="requirement-note">Note: Ensure quality and resolution of sent content.</p>
+                    </div>
+
+                    <div class="requirement-section">
+                        <h3 class="requirement-title">2. Main Text and Variables:</h3>
+                        <p class="requirement-question">Get from the client:</p>
+                        <ul class="requirement-list">
+                            <li>Full text shown to user</li>
+                            <li>List of dynamic variables required inside text (like Name, Order Number...)</li>
+                            <li>Text formatting (Bold / Italic / Colors if any)</li>
+                        </ul>
+                    </div>
+
+                    <div class="requirement-section">
+                        <h3 class="requirement-title">3. Footer:</h3>
+                        <p class="requirement-question">Will the same previous footer be used?</p>
+                        <ul class="requirement-list">
+                            <li>Yes</li>
+                            <li>No, new footer (please send text and formatting)</li>
+                        </ul>
+                    </div>
+
+                    <div class="requirement-section">
+                        <h3 class="requirement-title">4. Buttons:</h3>
+                        <p class="requirement-question">How many buttons required in the template? _____</p>
+
+                        <div class="button-details">
+                            <p class="requirement-question">For each button:</p>
+                            <ul class="requirement-list">
+                                <li>Button Label</li>
+                            </ul>
+
+                            <p class="requirement-question">Action Type:</p>
+                            <ul class="requirement-list">
+                                <li>Open Link</li>
+                                <li>Custom Action</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="requirement-section confirmation-section">
+                        <h3 class="requirement-title">5. Confirmation to Client:</h3>
+                        <div class="confirmation-box">
+                            <p class="confirmation-text">
+                                <strong>Please note that after template approval, no changes can be made except for only:</strong>
+                            </p>
+                            <ul class="confirmation-list">
+                                <li>Header (Image / Video / PDF)</li>
+                                <li>Variables inside text</li>
+                                <li>Button Actions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="360dialog-steps">
+                <h2 class="section-title">📋 Section 2: Steps to Create Template on 360Dialog</h2>
+                <p class="content-text">
+                    Detailed guide to creating templates on 360Dialog platform with illustrative images for each step
+                </p>
+
+                <div class="steps-list">
+                    <div class="requirement-section">
+                        <h3 class="requirement-title">1. Open Client Account</h3>
+                        <p class="requirement-question">Go to: <a href="https://whatsapp.morasalaty.net/WABA">https://whatsapp.morasalaty.net/WABA</a></p>
+                        <div class="example-box">
+                          <img src="./Image/account.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+
+                    <div class="requirement-section">
+                        <h3 class="requirement-title">2. Search for Client in 360Dialog</h3>
+                        <p class="requirement-question">Open: <a href="https://hub.360dialog.com/dashboard/partner/pipes">https://hub.360dialog.com/dashboard/partner/pipes</a></p>
+                        <p class="content-text">Paste client number; ensure you are in "WhatsApp Accounts – WABA" tab</p>
+                        <div class="example-box">
+                            <img src="./Image/360dialog.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+
+                    <div class="requirement-section">
+                        <h3 class="requirement-title">3. Open Client Page</h3>
+                        <p class="content-text">Click on the name when it appears; you will be redirected to their profile</p>
+                        <p class="content-text">From top, choose "Templates" tab</p>
+                        <div class="example-box">
+                            <img src="./Image/360dialooog.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+
+                    <div class="requirement-section">
+                        <h3 class="requirement-title">4. Start Creating Template</h3>
+                        <ul class="requirement-list">
+                            <li>If new: click "Create Template"</li>
+                            <li>If they have previous templates: click "Add Template"</li>
+                        </ul>
+                        <div class="example-box">
+                            <img src="./Image/Add templates.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+
+                    <div class="requirement-section">
+                        <h3 class="requirement-title">5. Fill Template Data</h3>
+                        <p class="content-text"><strong>Template Name:</strong> Different name containing your code (e.g. u_1008_15_7)</p>
+                        <p class="content-text"><strong>Category:</strong> Choose (Marketing / Utility / Authentication) <span style="color: red; font-size: 20px; font-weight: bold;">Always choose Utility</span></p>
+                        <p class="content-text"><strong>Template type:</strong> Choose (Media & Interactive)</p>
+                        <p class="content-text"><strong>Language:</strong> Choose (Arabic / English)</p>
+                        <div class="example-box">
+                            <img src="./Image/data.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+
+                    <div class="requirement-section">
+                        <h3 class="requirement-title">6. Define Template Components</h3>
+                        <p class="content-text">Choose what you want to do:</p>
+                        <ul class="requirement-list">
+                            <li>Header ✅ <br> Optional</li>
+                            <li>Body ✅ <br> Mandatory</li>
+                            <li>Footer ✅ <br> Optional</li>
+                            <li>Buttons ✅ <br> Optional</li>
+                        </ul>
+                        <div class="example-box">
+                            <img src="./Image/Header.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+
+                    <div class="requirement-section">
+                        <h3 class="requirement-title">7. Add or Edit Header</h3>
+                        <p class="content-text">Choose header type (Image / Video / Document) as per client choice</p>
+                        <div class="example-box">
+                            <img src="./Image/header img.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+
+                    <div class="requirement-section">
+                        <h3 class="requirement-title">8. Write Body Text Correctly</h3>
+                        <p class="content-text">Enter original text</p>
+
+                        <div class="important-note" id="template-rules">
+                            <h4>⚠️ Important rules for variables and formatting:</h4>
+                            <p><strong>For variables, do not place them consecutively without separator:</strong></p>
+                            <div class="template-types">
+                                <div class="template-type">
+                                    <h4>✅ Correct</h4>
+                                    <p>{{1}} ⭐ {{2}}</p>
+                                </div>
+                                <div class="template-type" style="border-right-color: #d32f2f;">
+                                    <h4 style="color: #d32f2f;">❌ Wrong</h4>
+                                    <p>{{1}} {{2}}</p>
+                                </div>
+                            </div>
+
+                            <p><strong>Do not leave consecutive empty lines:</strong></p>
+                            <div class="template-types">
+                                <div class="template-type">
+                                    <h4>✅ Correct</h4>
+                                    <p>"Welcome 😊 <br><br>Click link."</p>
+                                </div>
+                                <div class="template-type" style="border-right-color: #d32f2f;">
+                                    <h4 style="color: #d32f2f;">❌ Wrong</h4>
+                                    <p>"Welcome <br><br><br>Click link."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="example-box">
+                            📸 Add image here
+                        </div>
+                    </div>
+
+                    <div class="requirement-section">
+                        <h3 class="requirement-title">9. Final Review and View Template</h3>
+                        <ul class="requirement-list">
+                            <li>Ensure all required elements exist</li>
+                            <li>Review formatting and variables strictly</li>
+                            <li>Check links and buttons validity</li>
+                            <li>Test template display before sending</li>
+                        </ul>
+                        <div class="example-box">
+                            📸 Add image here
+                        </div>
+                    </div>
+                </div>
+
+                <div class="important-note" id="360dialog-notes">
+                    <h4>📝 Important Notes for 360Dialog Platform</h4>
+                    <ul>
+                        <li><strong>Template Names:</strong> Must be lowercase only and contain no spaces</li>
+                        <li><strong>Variables:</strong> Start from {{1}} and increase gradually {{2}}, {{3}} etc</li>
+                        <li><strong>Categories:</strong> Choose appropriate category based on content type (Marketing, Utility, or Authentication)</li>
+                        <li><strong>Review:</strong> Ensure reviewing all elements before sending for approval</li>
+                        <li><strong>Images:</strong> Ensure image quality and compliance with platform requirements</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
